@@ -1,0 +1,39 @@
+.title{
+    text-indent: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 45pt;
+}
+.barra{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+.btn1{
+    font-size: 20pt;
+    height: 100%;
+    color: whitesmoke;
+    background-color: black;
+    border:0;
+    border-radius: 0;
+}
+.btn2{
+    font-size: 20pt;
+    color: whitesmoke;
+    background-color: black;
+    border:0;
+    border: 2px white solid;
+    border-radius: 30px;
+    float: right;
+    margin-top:5px;
+}
+.separator{
+    width: 100%;
+    color: #a39f95;
+    size: 4;
+}
+.intestation{
+    font-size: 27pt;
+    margin-left: 30px;
+}

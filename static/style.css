@@ -1,4 +1,17 @@
 body{
-  background-color:red;
+  background-color:rgb(219, 219, 207);
   font-family:'Recursive',sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.end{
+  background-color: black;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+}
+.text{
+  font-weight:400;
+  text-align: center;
+  color: white;
 }
