@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Referendum - Login {% endblock %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='loginStyle.css') }}">
+{% endblock %}
+
+{% block pageContent %}
+<div class = general>
+    <!--Scritta login e robe simili-->
+    <h1 class = LoginTitle>Login</h1>
+
+    <!--Nome utente-->
+    <div>
+        <p class = rubtext>Nome utente</p>
+        <!--Nome utente-->
+        <input type="text" placeholder = "Nome Utente " class = enter>
+    </div>
+
+    <div>
+        <p class = rubtext>Password</p>
+        <!--Password-->
+        <input type = "password" minlenght = 6 placeholder="Password" class = enter required>
+    </div>
+        <!--Bottone conferma-->
+        <button class = submit>Conferma</button>
+        <!--Testo che permette di andare alla pagina di registrazione-->
+        <p class= notR>Non sei registrato? <a href = "#">Registrati</a></p>
+    
+</div>
+{% endblock %}

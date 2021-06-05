@@ -1,0 +1,15 @@
+<!DOCTYPE html lang="en">
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <title>{% block title %}{% endblock %}</title>
+        {% block extra %}{% endblock %}
+    </head>
+
+    <body>
+        {% block pageContent %}
+        {% endblock %}
+    </body>
+</html>
