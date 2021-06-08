@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Referendum{% endblock %}
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='homeStyle.css')}}">
+{% endblock %}
+
+
+{% block pageContent %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<!--Barra About-Account-->
+
+<!--Titolo in cima centrato-->
+<h1 class="title">Referendum</h1>
+<!--Linea separatoria-->
+<hr class="separator"> 
+
+<div>
+<!--Referendum globali-->
+<h2 class="intestation">Referendum globali</h2>
+
+<!--Qui vanno inseriti con un for, mediante i db-->
+
+<!--Miei referendum-->
+<h2 class="intestation">I miei referendum</h2>
+
+<!--Qui vanno inseriti i miei referendum-->
+
+</div>
+<form method="post" class="formClass">
+    <button type="submit" class="create">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg>
+    </button>
+</form>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Referendum - Sign up{% endblock %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signupStyle.css')}}">
+{% endblock %}
+
+{% block pageContent %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+    <div class = general>
+        <form method="post">
+        <!--Scritta login e robe simili-->
+        <h1 class = LoginTitle>Registrati</h1>
+
+        <!--Nome utente-->
+        <div>
+            <p class = rubtext>Nome utente</p>
+            <!--Nome utente-->
+            <input type="text" placeholder="Nome Utente" class=enter name="username">
+        </div>
+
+        <div>
+            <p class = rubtext>Password</p>
+            <!--Password-->
+            <input type="password" minlenght=6 placeholder="Password" class=enter name="psw1" id="psw1" required>
+        </div>
+
+        <div>
+            <p class = rubtext>Conferma password</p>
+            <!--Password-->
+            <input type="password" minlenght=6 placeholder="Conferma password" class=enter name="psw2" id="psw2" required>
+        </div>
+            <!--Bottone conferma-->
+            <button type="submit" class = submit>Conferma</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+.general{
+    width:280px;
+    background-color:whitesmoke;
+    text-align:center;
+    border: 2px solid rgb(2, 69, 106);
+    margin:auto;
+    margin-top: 15%;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.LoginTitle{
+    position:relative;
+    font-family:'Recursive',sans-serif;
+    font-weight:700;
+    text-align: center;
+}
+
+.rubtext{
+    font-family:'Recursive',sans-serif;
+    font-weight:500;
+    font-size: 15pt;
+}
+
+.submit{
+    margin-top:10px;
+    font-family:'Recursive',sans-serif;
+    padding:7px;
+}
+
+.enter{
+    font-family: 'Recursive', sans-serif;
+    font-size: 13pt;
+}
+
+.notR{
+    font-family: 'Recursive', sans-serif;
+    font-size:10pt;
+}
