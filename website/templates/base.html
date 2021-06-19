@@ -4,11 +4,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='ref.png') }}"/>
         <title>{% block title %}{% endblock %}</title>
         {% block extra %}{% endblock %}
     </head>
 
     <body>
+        
         {% block pageContent %}
         {% endblock %}
         <div class="end">

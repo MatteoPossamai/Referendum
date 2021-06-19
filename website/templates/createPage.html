@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Referendum - New{% endblock %}
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='createStyle.css')}}">
+{% endblock %}
+{% block pageContent %}
+<form method="post">
+<h2>Referendum creation page</h2>
+<p class="textT">Inserire la domanda che si vuole fare</p>
+<input type="text" name="question" placeholder="Domanda" size="70">
+
+<p class="textT">Inserire la prima risposta possibile</p>
+<input type="text" name="answ1" placeholder="Risposta1" size="70">
+
+<p class="textT">Inserire la seconda risposta possibile</p>
+<input type="text" name="answ2" placeholder="Risposta2" size="70">
+<br><br>
+<input type="submit" class="crea" value="Create" name="create">
+</form>
+{% endblock %}
