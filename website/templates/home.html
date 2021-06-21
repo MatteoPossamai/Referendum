@@ -30,13 +30,20 @@
 <!--Qui vanno inseriti con un for, mediante i db-->
 {% for element in range(1,datas.count()+1) %}
     {% if datas.filter_by(id=element).first().user_name != user.name  %}
-    <form action="post">
-        <fieldset style="border:{% if user.name in datas.filter_by(id=element).first().voters %}#f00 solid 2px {% else %}#00f solid 2px{% endif %};" class="fild"> 
+    <form method="post">
+        <fieldset style="border:{% if '#'+user.name+'#' in datas.filter_by(id=element).first().voters %}#f00 solid 2px {% else %}#00f solid 2px{% endif %};" class="fild"> 
             <legend>{{ datas.filter_by(id=element).first().question }}</legend>
-            {{ datas.filter_by(id=element).first().fAnsw }} <input type="radio" name="linguaggio" value="fa"/>
-            {{ datas.filter_by(id=element).first().sAnsw }}<input type="radio" name="linguaggio" value="sa"/>
             <br><br>
-            {% if user.name not in datas.filter_by(id=element).first().voters %}
+            {{ datas.filter_by(id=element).first().fAnsw }} <input type="radio" name="opt" value="fa{{ element }}"/>
+            {% if '#'+user.name+'#' in datas.filter_by(id=element).first().voters %}
+            <progress value="{{datas.filter_by(id=element).first().fVote}}" max="{{datas.filter_by(id=element).first().fVote+datas.filter_by(id=element).first().sVote}}"></progress>
+            {% endif %}
+            {{ datas.filter_by(id=element).first().sAnsw }}<input type="radio" name="opt" value="sa{{ element }}"/>
+            {% if '#'+user.name+'#' in datas.filter_by(id=element).first().voters %}
+            <progress value="{{datas.filter_by(id=element).first().sVote}}" max="{{datas.filter_by(id=element).first().fVote+datas.filter_by(id=element).first().sVote}}"></progress>
+            {% endif %}
+            <br><br>
+            {% if '#'+user.name+'#' not in datas.filter_by(id=element).first().voters %}
             <button type="submit" id="ans">Conferma</button>
             {% endif %}
         </fieldset>
@@ -52,13 +59,20 @@
 <!--Qui vanno inseriti i miei referendum-->
 {% for element in range(1,datas.count()+1) %}
     {% if datas.filter_by(id=element).first().user_name == user.name  %}
-    <form action="post">
-        <fieldset style="border:{% if user.name in datas.filter_by(id=element).first().voters %}#f00 solid 2px {% else %}#00f solid 2px{% endif %};" class="fild"> 
+    <form method="post">
+        <fieldset style="border:{% if '#'+user.name+'#' in datas.filter_by(id=element).first().voters %}#f00 solid 2px {% else %}#00f solid 2px{% endif %};" class="fild"> 
             <legend>{{ datas.filter_by(id=element).first().question }}</legend>
-            {{ datas.filter_by(id=element).first().fAnsw }} <input type="radio" name="linguaggio" value="fa"/>
-            {{ datas.filter_by(id=element).first().sAnsw }}<input type="radio" name="linguaggio" value="sa"/>
             <br><br>
-            {% if user.name not in datas.filter_by(id=element).first().voters %}
+            {{ datas.filter_by(id=element).first().fAnsw }} <input type="radio" name="opt" value="fa{{ element }}"/>
+            {% if '#'+user.name+'#' in datas.filter_by(id=element).first().voters %}
+            <progress value="{{datas.filter_by(id=element).first().fVote}}" max="{{datas.filter_by(id=element).first().fVote+datas.filter_by(id=element).first().sVote}}"></progress>
+            {% endif %}
+            {{ datas.filter_by(id=element).first().sAnsw }}<input type="radio" name="opt" value="sa{{ element }}"/>
+            {% if '#'+user.name+'#' in datas.filter_by(id=element).first().voters %}
+            <progress value="{{datas.filter_by(id=element).first().sVote}}" max="{{datas.filter_by(id=element).first().fVote+datas.filter_by(id=element).first().sVote}}"></progress>
+            {% endif %}
+            <br><br>
+            {% if '#'+user.name+'#' not in datas.filter_by(id=element).first().voters %}
             <button type="submit" id="ans">Conferma</button>
             {% endif %}
         </fieldset>

@@ -113,5 +113,9 @@
     border-radius: 5px;
 }
 legend{
-    font-size: 14pt;
+    font-size: 16pt;
+}
+.cont{
+    width:fit-content;
+    max-width: 400px;
 }

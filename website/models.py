@@ -15,7 +15,7 @@ class Refs(db.Model):
     sAnsw = db.Column(db.String(200))
     fVote = db.Column(db.Integer, default=0)
     sVote = db.Column(db.Integer, default=0)
-    voters = db.Column(db.String(10000), default="")
+    voters = db.Column(db.String(10000), default="#")
     user_name = db.Column(db.String(200), db.ForeignKey('user.name'))
 
 """

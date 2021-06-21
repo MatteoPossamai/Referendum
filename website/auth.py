@@ -37,6 +37,8 @@ def signup():
             flash("Username too short", category="error")
         elif psw1!=psw2:
             flash("Passwords are different", category="error")
+        elif '#' in username:
+            flash('Name can\'t contain #')
         else:
             new_user = User(name=username, password=psw1)
             print(new_user)

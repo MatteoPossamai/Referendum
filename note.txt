@@ -1,2 +1,0 @@
--decidere se mettere subito i risultati, e mettere la possibilità di votare
--capire come scegliere se lasciarlo votare, in base a una voce da mettere nel db
