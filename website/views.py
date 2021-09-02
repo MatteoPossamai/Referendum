@@ -10,8 +10,6 @@ views = Blueprint('views', __name__)
 @views.route("/home", methods=["GET", "POST"])
 @login_required
 def home():
-    p1=0
-    p2=0
     selected=0
     if request.method =="POST":
         selected = request.form.getlist('opt')
