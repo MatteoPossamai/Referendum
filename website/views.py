@@ -1,5 +1,5 @@
 from typing_extensions import ParamSpecKwargs
-from flask import Blueprint, render_template, request, flash, redirect, url_for, request
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
 from . import db
 from .models import Refs
@@ -16,16 +16,13 @@ def home():
     if request.method =="POST":
         selected = request.form.getlist('opt')
         if len(selected)>0:
-            print(selected,selected[:2]=='fa')
+            #print(selected,selected[:2]=='fa')
             Refs.query.filter_by(id=int(str(selected[0][2:]))).first().voters +=current_user.name +'#'
             if str(selected[0][:2])=='fa':
                 Refs.query.filter_by(id=int(str(selected[0][2:]))).first().fVote+=1
             elif str(selected[0][:2])=='sa':
                 Refs.query.filter_by(id=int(str(selected[0][2:]))).first().sVote+=1
             db.session.commit()
-            print(Refs.query.filter_by(id=int(str(selected[0][2:]))).first().fVote)
-            print(Refs.query.filter_by(id=int(str(selected[0][2:]))).first().sVote)
-            tot = Refs.query.filter_by(id=int(str(selected[0][2:]))).first().sVote + Refs.query.filter_by(id=int(str(selected[0][2:]))).first().fVote
         else:
             flash('You must choose an answer to submit')
     return render_template("home.html", user=current_user, datas=Refs.query)
