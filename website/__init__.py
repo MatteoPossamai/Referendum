@@ -10,7 +10,10 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__,static_url_path='/static')
     app.config['SECRET_KEY'] = "referendumkey"
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['MYSQL_HOST'] = 'sql8.freemysqlhosting.net'
+    app.config['MYSQL_USER'] = 'sql8522445'
+    app.config['MYSQL_PASSWORD'] = 'AGy4edkAFj'
+    app.config['MYSQL_DB'] = 'sql8522445'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
     db.init_app(app)
 
