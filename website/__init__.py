@@ -9,6 +9,7 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__,static_url_path='/static')
+    
     app.config['SECRET_KEY'] = "referendumkey"
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
